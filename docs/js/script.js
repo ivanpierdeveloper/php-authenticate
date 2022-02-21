@@ -95,4 +95,21 @@ async function login() {
             }
         )
     })
-}
+}// ./login()
+async function keyUp() {
+    try{
+        if(event.keyCode == 13) {
+            login();
+        } else {
+            throw new Error("Non hai premuto key Enter code keyCode 13");
+        }
+    } catch(Exception) {
+        await cn.table(
+            {
+                msgError: Exception.message,
+                nameError: Exception.name,
+                linea: Exception.lineNumber
+            }
+        )
+    }
+}// ./keyUp()

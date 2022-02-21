@@ -52,8 +52,9 @@ async function login() {
     // hd.append('Content-type', 'application/json'); // for method get not necessity
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
-        method: "POST",
+        method: 'POST',
         // headers: hd // for get, not necessity
+        mode: 'cors',
         body: formData // for post
     });
     await fetch(req)

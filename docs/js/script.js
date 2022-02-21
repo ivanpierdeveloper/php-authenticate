@@ -49,8 +49,8 @@ async function login() {
         formData.append('passwd' , passwd);
     // let params = `?user=${user}&passwd=${passwd}` // for method get
     let hd = new Headers(); // for method get not necesity
-    // hd.append('Content-type', 'application/json'); // for method get not necessity
-    hd.append('Content-type', 'application/x-www-form-urlencoded');
+    hd.append('Content-type', 'application/json'); // for method get not necessity
+    //hd.append('Content-type', 'application/x-www-form-urlencoded');
     hd.append('Authorization', 'basicAuth');
     hd.append("Accept", "*/*");
     // let req = new Request(`${url}${params}`, { // for method get

@@ -48,12 +48,13 @@ async function login() {
         formData.append('user', user);
         formData.append('passwd' , passwd);
     // let params = `?user=${user}&passwd=${passwd}` // for method get
-    // let hd = new Headers(); // for method get not necesity
+    let hd = new Headers(); // for method get not necesity
     // hd.append('Content-type', 'application/json'); // for method get not necessity
+    hd.append('Content-type', 'application/x-www-form-urlencoded');
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
         method: 'POST',
-        // headers: hd // for get, not necessity
+        headers: hd,
         mode: 'cors',
         body: formData // for post
     });

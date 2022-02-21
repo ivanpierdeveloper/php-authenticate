@@ -52,6 +52,7 @@ async function login() {
     // hd.append('Content-type', 'application/json'); // for method get not necessity
     hd.append('Content-type', 'application/x-www-form-urlencoded');
     hd.append('Authorization', 'basicAuth');
+    hd.append("Accept", "*/*");
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
         body: formData, // for post

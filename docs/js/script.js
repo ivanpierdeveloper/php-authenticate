@@ -56,7 +56,8 @@ async function login() {
     let req = new Request(url, {
         body: formData, // for post
         headers: hd, // for get, not necessity
-        method: "POST"
+        method: "POST",
+        "X-CSRF-TOKEN": 2132123343455465676786
     });
     await fetch(req)
     .then((res) => {

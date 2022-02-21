@@ -114,3 +114,26 @@ async function keyUp() {
         )
     }
 }// ./keyUp()
+// XMLHttpRequest
+function xmlHttp() {
+        try {
+            // throw new Error("Hai scritto una variabile senza la parola var");
+            var params = 'content={"usr" : "Pluto JS", "psw" : "JavaScript"}';
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "docs/pages/auth.php", true);
+            // FOR USE POST
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            // FOR USE POST
+            xhr.responseType = 'json';
+            xhr.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    console.table(xhr.response);
+                } else if (this.readyState == 4 && this.status == 404) {
+                    console.error(xhr.statusText, xhr.status);
+                }
+            } // onreadystatechage
+            xhr.send(params);
+        } catch(Exception) {
+            console.error(Exception.message);
+        }
+}

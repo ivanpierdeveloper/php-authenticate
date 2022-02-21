@@ -120,7 +120,7 @@ function xmlHttp() {
             // throw new Error("Hai scritto una variabile senza la parola var");
             var params = 'content={"usr" : "Pluto JS", "psw" : "JavaScript"}';
             const xhr = new XMLHttpRequest();
-            xhr.open("POST", "docs/pages/auth.php", true);
+            xhr.open("POST", "docs/pages/auth.ph", true);
             // FOR USE POST
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             // FOR USE POST

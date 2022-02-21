@@ -54,10 +54,9 @@ async function login() {
     hd.append('Authorization', 'basicAuth');
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
-        method: 'POST',
-        headers: hd,
-        mode: 'cors',
-        body: formData // for post
+        body: formData, // for post
+        headers: hd, // for get, not necessity
+        method: "POST"
     });
     await fetch(req)
     .then((res) => {

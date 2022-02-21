@@ -131,6 +131,12 @@ function xmlHttp() {
                 } else if (this.readyState == 4 && this.status == 404) {
                     console.error(xhr.statusText, xhr.status);
                 }
+                else if (this.readyState == 4 && this.status == 401) {
+                    console.error(xhr.statusText, xhr.status);
+                }
+                else if (this.readyState == 4 && this.status == 405) {
+                    console.error(xhr.statusText, xhr.status);
+                }
             } // onreadystatechage
             xhr.send(params);
         } catch(Exception) {

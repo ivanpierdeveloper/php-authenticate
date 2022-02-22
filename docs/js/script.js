@@ -50,7 +50,7 @@ async function login() {
     let params = `?user=${user}&passwd=${passwd}`; // for method get
     let hds = new Headers(); // for method get not necesity
     // hds.append('Content-type', 'application/json'); // for method get not necessity
-    hds.append('Content-type', 'application/x-www-form-urlencoded');
+    // hds.append('Content-type', 'application/x-www-form-urlencoded');
     // hds.append('Authorization', 'basicAuth');
     // hds.append("Accept", "*/*");
     /*
@@ -61,12 +61,13 @@ async function login() {
     hds.append("Cache-Control", "no-cache");
     hds.append('Accept', 'application/json');
     hds.append('Authorization', 'authorizationHeader');
-    */
+    
     hds.append('Access-Control-Allow-Origin', '*'); // IMPORTANTE CORS “Access-Control-Allow-Origin” mancante
     hds.append('Access-Control-Expose-Headers', 'Content-Length, X-JSON');
     hds.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
     hds.append('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept, Accept-Language, X-Authorization');
     hds.append('Access-Control-Max-Age', '86400');
+    */
     let req = new Request(`${url}${params}`, { // for method get
     //let req = new Request(url, {
         // body: formData, // for post

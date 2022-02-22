@@ -47,7 +47,7 @@ async function login() {
     let formData = new FormData();
         formData.append('user', user);
         formData.append('passwd' , passwd);
-    let params = `?user=${user}&passwd=${passwd}` // for method get
+    let params = `?user=${user}&passwd=${passwd}`; // for method get
     let hds = new Headers(); // for method get not necesity
     // hds.append('Content-type', 'application/json'); // for method get not necessity
     hds.append('Content-type', 'application/x-www-form-urlencoded');

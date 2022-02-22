@@ -71,7 +71,8 @@ async function login() {
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
         body: formData, // for post
-        // mode: 'cors',
+        mode: 'cors',
+        referrerPolicy: "origin-when-cross-origin" ,
         // headers: hds, // for get, not necessity
         method: "POST"
         // "X-CSRF-TOKEN": 2132123343455465676786

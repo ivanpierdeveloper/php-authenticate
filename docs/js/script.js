@@ -49,8 +49,8 @@ async function login() {
         formData.append('passwd' , passwd);
     // let params = `?user=${user}&passwd=${passwd}` // for method get
     let hds = new Headers(); // for method get not necesity
-    hds.append('Content-type', 'application/json'); // for method get not necessity
-    //hds.append('Content-type', 'application/x-www-form-urlencoded');
+    // hds.append('Content-type', 'application/json'); // for method get not necessity
+    hds.append('Content-type', 'application/x-www-form-urlencoded');
     hds.append('Authorization', 'basicAuth');
     hds.append("Accept", "*/*");
     hds.append('Access-Control-Allow-Origin', '*');

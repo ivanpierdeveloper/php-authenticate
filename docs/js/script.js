@@ -66,7 +66,7 @@ async function login() {
     hds.append('Access-Control-Expose-Headers', 'Content-Length, X-JSON');
     hds.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
     hds.append('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept, Accept-Language, X-Authorization');
-    hds.append('Access-Control-Max-Age: 86400');
+    hds.append('Access-Control-Max-Age', '86400');
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
         body: formData, // for post

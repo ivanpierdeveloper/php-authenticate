@@ -79,7 +79,7 @@ async function login() {
     await fetch(req)
     .then((res) => {
         if(res.ok) {
-            return Promise.resolve(res.json());
+            return Promise.resolve(res.text());
         } else {
             return Promise.reject(
                 {

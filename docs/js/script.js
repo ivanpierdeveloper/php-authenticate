@@ -55,14 +55,14 @@ async function login() {
     hds.append("Accept", "*/*");
     hds.append('Access-Control-Allow-Origin', '*');
     hds.append('Cross-Origin-Resource-Policy', 'cross-origin');
-    hds.append("Access-Control-Allow-Methods", "GET, POST");
+    hds.append("Access-Control-Allow-Methods", "GET, POST, PUT");
     hds.append("Access-Control-Allow-Headers", "Content-Type, Accept");
     hds.append("Cache-Control", "no-cache");
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
         body: formData, // for post
         headers: hds, // for get, not necessity
-        method: "POST",
+        method: "PUT",
         "X-CSRF-TOKEN": 2132123343455465676786
     });
     await fetch(req)

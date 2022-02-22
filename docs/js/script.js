@@ -107,7 +107,7 @@ async function login() {
         result.appendChild(span);
     })
     .catch((error) => {
-        cn.table(
+        console.table(
             {
                 msg : error.message,
                 cod : error.code

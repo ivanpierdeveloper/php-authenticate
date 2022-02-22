@@ -51,19 +51,22 @@ async function login() {
     let hds = new Headers(); // for method get not necesity
     // hds.append('Content-type', 'application/json'); // for method get not necessity
     hds.append('Content-type', 'application/x-www-form-urlencoded');
-    hds.append('Authorization', 'basicAuth');
-    hds.append("Accept", "*/*");
+    // hds.append('Authorization', 'basicAuth');
+    // hds.append("Accept", "*/*");
     hds.append('Access-Control-Allow-Origin', '*');
     hds.append('Cross-Origin-Resource-Policy', 'cross-origin');
     hds.append("Access-Control-Allow-Methods", "GET, POST, PUT");
     hds.append("Access-Control-Allow-Headers", "Content-Type, Accept");
     hds.append("Cache-Control", "no-cache");
+    hds.append('Accept', 'application/json');
+    hds.append('Authorization', 'authorizationHeader');
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
         body: formData, // for post
+        mode: 'cors',
         headers: hds, // for get, not necessity
         method: "POST",
-        "X-CSRF-TOKEN": 2132123343455465676786
+        // "X-CSRF-TOKEN": 2132123343455465676786
     });
     await fetch(req)
     .then((res) => {

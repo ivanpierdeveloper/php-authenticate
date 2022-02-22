@@ -73,7 +73,7 @@ async function login() {
         body: formData, // for post
         mode: 'cors',
         //referrerPolicy: 'origin-when-cross-origin',
-        referrer: 'unsafe-url',
+        referrer: 'unsafe-url, https://ivanpierdeveloper.github.io/php-authenticate', // or origin-when-cross-origin
         // headers: hds, // for get, not necessity
         method: "POST"
         // "X-CSRF-TOKEN": 2132123343455465676786

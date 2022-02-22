@@ -1,5 +1,5 @@
 <?php
-    header("Content-type: application/json; charsdet=UTF-8");
+    header("Content-type: application/json; charset=UTF-8");
     echo '[
         {
             "username" : "Pluto",

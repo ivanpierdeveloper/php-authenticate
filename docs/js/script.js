@@ -72,7 +72,7 @@ async function login() {
     let req = new Request(url, {
         body: formData, // for post
         mode: 'cors',
-        referrerPolicy: 'https://ivanpierdeveloper.github.io/php-authenticate/', //"origin-when-cross-origin" ,
+        referrerPolicy: 'origin-when-cross-origin',
         // headers: hds, // for get, not necessity
         method: "POST"
         // "X-CSRF-TOKEN": 2132123343455465676786

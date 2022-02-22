@@ -89,7 +89,7 @@ async function login() {
         }// ./if
     })
     .then((data) => {
-        cn.table(
+        console.table(
             {
                 result : data,
                 er : parseInt(data[0].err)

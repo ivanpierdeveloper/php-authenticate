@@ -39,7 +39,8 @@
             "message" : "'.$msg.'",
             "user" : "'.$user.'",
             "passwd" : "'.$passwd.'",
-            "err" : "'.$er.'"
+            "err" : "'.$er.'",
+            "method" : "GET"
         }
     ]';
 ?>

@@ -48,17 +48,17 @@ async function login() {
         formData.append('user', user);
         formData.append('passwd' , passwd);
     // let params = `?user=${user}&passwd=${passwd}` // for method get
-    let hd = new Headers(); // for method get not necesity
-    hd.append('Content-type', 'application/json'); // for method get not necessity
-    //hd.append('Content-type', 'application/x-www-form-urlencoded');
-    hd.append('Authorization', 'basicAuth');
-    hd.append("Accept", "*/*");
-    hd.append('Access-Control-Allow-Origin', '*');
-    hd.append('Cross-Origin-Resource-Policy', 'cross-origin');
+    let hds = new Headers(); // for method get not necesity
+    hds.append('Content-type', 'application/json'); // for method get not necessity
+    //hds.append('Content-type', 'application/x-www-form-urlencoded');
+    hds.append('Authorization', 'basicAuth');
+    hds.append("Accept", "*/*");
+    hds.append('Access-Control-Allow-Origin', '*');
+    hds.append('Cross-Origin-Resource-Policy', 'cross-origin');
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
         body: formData, // for post
-        headers: hd, // for get, not necessity
+        headers: hds, // for get, not necessity
         method: "POST",
         "X-CSRF-TOKEN": 2132123343455465676786
     });

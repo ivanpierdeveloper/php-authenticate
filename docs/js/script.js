@@ -54,6 +54,7 @@ async function login() {
     hd.append('Authorization', 'basicAuth');
     hd.append("Accept", "*/*");
     hd.append('Access-Control-Allow-Origin', '*');
+    hd.append('Cross-Origin-Resource-Policy', 'cross-origin');
     // let req = new Request(`${url}${params}`, { // for method get
     let req = new Request(url, {
         body: formData, // for post

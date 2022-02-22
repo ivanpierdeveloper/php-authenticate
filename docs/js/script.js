@@ -47,7 +47,7 @@ async function login() {
     let formData = new FormData();
         formData.append('user', user);
         formData.append('passwd' , passwd);
-    let params = `?user=${user}&passwd=${passwd}`; // for method get
+    // let params = `?user=${user}&passwd=${passwd}`; // for method get
     let hds = new Headers(); // for method get not necesity
     // hds.append('Content-type', 'application/json'); // for method get not necessity
     // hds.append('Content-type', 'application/x-www-form-urlencoded');
@@ -68,18 +68,18 @@ async function login() {
     hds.append('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept, Accept-Language, X-Authorization');
     hds.append('Access-Control-Max-Age', '86400');
     */
-    let req = new Request(`${url}${params}`, { // for method get
-    //let req = new Request(url, {
-        // body: formData, // for post
+    // let req = new Request(`${url}${params}`, { // for method get
+    let req = new Request(url, {
+        body: formData, // for post
         // mode: 'cors',
         // headers: hds, // for get, not necessity
-        method: "GET"
+        method: "POST"
         // "X-CSRF-TOKEN": 2132123343455465676786
     });
     await fetch(req)
     .then((res) => {
         if(res.ok) {
-            return Promise.resolve(res.text());
+            return Promise.resolve(res.json());
         } else {
             return Promise.reject(
                 {
@@ -90,7 +90,7 @@ async function login() {
         }// ./if
     })
     .then((data) => {
-        console.table(
+        cn.table(
             {
                 result : data,
                 er : parseInt(data[0].err)
@@ -108,7 +108,7 @@ async function login() {
         result.appendChild(span);
     })
     .catch((error) => {
-        console.table(
+        cn.table(
             {
                 msg : error.message,
                 cod : error.code
